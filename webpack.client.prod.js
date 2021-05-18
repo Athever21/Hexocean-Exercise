@@ -30,7 +30,8 @@ module.exports = {
     minimize: true,
     minimizer: [new TerserPlugin()],
     splitChunks: {
-      chunks: "all"
+      chunks: "all",
+      maxSize: 230000
     }
   },
   resolve: {

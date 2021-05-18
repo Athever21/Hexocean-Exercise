@@ -1,27 +1,37 @@
-import React from "react";
-import {hot} from "react-hot-loader";
+import React, { lazy, Suspense } from "react";
+import { hot } from "react-hot-loader";
 import styled from "styled-components";
+import Loading from "./components/Loading";
 
-const Div = styled.div`
-  height: 100vh;
+const Form = lazy(() => import("./components/Form"));
+
+const Container = styled.div`
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #023034;
+`;
+
+const Wrapper = styled.div`
+  width: 60%;
+  margin: 0 auto;
 `
 
 const H1 = styled.h1`
-  color: #a33242;
-  font-size: 5rem;
-`
+  text-align: center;
+  color: var(--main);
+  margin: 1rem 0;
+  font-size: 3.5rem;
+`;
 
 const App = () => {
-  return(
-    <Div>
-      <H1>Hello World!</H1>
-    </Div>
-  )
-}
+  return (
+    <Container>
+      <H1>Dish Form</H1>
+      <Wrapper>
+        <Suspense fallback={<Loading />}>
+          <Form />
+        </Suspense>
+      </Wrapper>
+    </Container>
+  );
+};
 
 export default hot(module)(App);

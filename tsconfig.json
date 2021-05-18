@@ -11,7 +11,6 @@
     "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
     "module": "esnext", // Specify module code generation
     "moduleResolution": "node", // Resolve modules using Node.js style
-    "isolatedModules": true, // Unconditionally emit imports for unresolved files
     "resolveJsonModule": true, // Include modules imported with .json extension
     "jsx": "react", // Support JSX in .tsx files
     "sourceMap": true, // Generate corrresponding .map file
@@ -22,7 +21,8 @@
   },
   "include": [
     "server/**/*",
-    "client/**/*"
+    "client/**/*",
+    "types.ts"
   ],
   "exclude": ["node_modules", "build"] // *** The files to not type check ***
 }

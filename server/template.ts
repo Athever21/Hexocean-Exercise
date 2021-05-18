@@ -5,7 +5,7 @@ export default (src: string) =>
       <title>Hexocean Exercise</title>
       <meta charset="utf-8">
     </head>
-    <body>
+    <body bgcolor="#202020">
       <div id="root"></div>
       ${src}
     </body>
